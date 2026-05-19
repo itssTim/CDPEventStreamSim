@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CDP Event Stream</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css"
+    
+</head>
+
+<body>
+    <h2 class="sr-only">CDP Event Stream Simulator — log panel mockup showing button controls and a live JSON event log</h2>
+
+    <div class="sim-wrap">
+    <div class="btn-panel">
+        <h3>trigger event</h3>
+        <button class="evt-btn" onclick="fire('sign_up')"><span class="dot dot-signup"></span> Sign Up</button>
+        <button class="evt-btn" onclick="fire('view_product')"><span class="dot dot-view"></span> View Product</button>
+        <button class="evt-btn" onclick="fire('add_to_cart')"><span class="dot dot-cart"></span> Add to Cart</button>
+        <button class="evt-btn" onclick="fire('click_cta')"><span class="dot dot-cta"></span> Click CTA</button>
+        <button onclick="clearLog()" style="margin-top:8px; font-size:12px; background:none; border:none; cursor:pointer; text-align:left; padding:4px 0;">
+        <i class="fa fa-trash-o" aria-hidden="true"></i> clear log
+        </button>
+    </div>
+
+    <div class="log-panel">
+        <div class="log-header">
+        <div class="tl"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+        <span class="log-title">event-stream.log</span>
+        </div>
+        <div class="log-body" id="logBody">
+        <div class="log-empty" id="emptyState">— no events captured yet —</div>
+        </div>
+        <div class="status-bar">
+        <div class="status-dot"></div>
+        <span class="status-text">listening on /collect</span>
+        <span class="event-count" id="evtCount">0 events</span>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
