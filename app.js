@@ -32,6 +32,7 @@ let colorJson = function (obj, indent=0) {
 };
 
 let eventFire = function(type) {
+    if (type === 'sign_up') {userId = 'usr' + crypto.randomUUID()};
 
     const eventLoad = {
         event: type,
