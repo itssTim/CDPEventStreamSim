@@ -36,3 +36,4 @@
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
   .status-text { font-size: 11px; color: #4b5563; font-family: monospace; }
   .event-count { font-size: 11px; color: #6b7280; font-family: monospace; margin-left: auto; }
+  .hidden {display: none; }
