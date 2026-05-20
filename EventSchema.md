@@ -60,8 +60,8 @@ Fired when the user clicks "View Product." Captures which product was viewed and
 | Field | Type | Required | Example | Description |
 |---|---|---|---|---|
 | `properties.productId` | string | yes | `"prod_001"` | Unique product identifier |
-| `properties.productName` | string | yes | `"Shirt"` | Display name of the product |
-| `properties.category` | string | yes | `"Clothes"` | Product category |
+| `properties.productName` | string | yes | `"Merino Wool Shirt"` | Display name of the product |
+| `properties.category` | string | yes | `"Apparel"` | Product category |
 | `properties.price` | number | yes | `20` | Unit price in USD |
  
 **Example payload**
@@ -151,11 +151,3 @@ Fired when the user clicks a call-to-action element. Captures the label and dest
 }
 ```
  
----
- 
-## Notes
- 
-- **Anonymous vs. identified:** `userId` is `null` on all events until `sign_up` fires. Post-identification, all events carry both `anonymousId` and `userId`, mirroring Segment's identify/track flow.
-- **Event naming:** All event names are snake_case. `click_CTA` has been normalised to `click_cta` for consistency.
-- **`destinationURL` normalised to `destinationUrl`:** camelCase with lowercase `rl` suffix is consistent with Segment Spec conventions.
-- **`price` type:** Stored as a number (not a string) to support downstream aggregation without casting.
