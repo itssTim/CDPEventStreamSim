@@ -1,4 +1,8 @@
 'use strict';
+//Creates element that directs to either localhost Port 3000 or the render server
+const API_BASE = window.location.hostname === 'localhost'
+    ? 'http://localhost:3000'
+    : 'https://your-app.onrender.com';
 
 let anonymousId = crypto.randomUUID();
 let userId = null;
@@ -31,7 +35,8 @@ let colorJson = function (obj, indent=0) {
     return `{\n${entries.join(',\n')}\n${pad}}`;
 };
 
-let eventFire = function(type) {
+let eventFire = async function(type) {
+    try {
     if (type === 'sign_up') {userId = 'usr_' + crypto.randomUUID()};
 
     const eventLoad = {
@@ -46,22 +51,39 @@ let eventFire = function(type) {
         },
         properties: {}
     };
+
     eventLoad.properties = events[type];
     count++;
+    // Pauses execution inside the evenFire function until we communicate with API_BASE and receive a response. It then checks if the response is ok and if not ok it then throws an error and catches and logs the error in the console
+    const response = await fetch(`${API_BASE}/track`, {
+       //specifies method of fetch
+        method: "POST",
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(eventLoad)
+    });
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
 
     document.querySelector('.log-empty').classList.add('hidden');
-
+    
     let log = document.createElement('pre');
     log.className = 'log-entry';
     log.innerHTML = colorJson(eventLoad);
     log_body.prepend(log);
     log_count.innerHTML= `${count} events`;
 
+    const data = await response.json();
+    console.log(data);
+
+}   catch(err) {
+    console.error(err);
+    throw err;
+}
 };
 
 let clearLog = function () {
-    const body = document.getElementById('logBody');
-    body.innerHTML = '<div class="log-empty" id="emptyState">— no events captured yet —</div>';
+    log_body.innerHTML = '<div class="log-empty log-body">— no events captured yet —</div>';
     count = 0;
     log_count.innerHTML = '0 events';
 };
