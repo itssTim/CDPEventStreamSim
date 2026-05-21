@@ -2,7 +2,7 @@
 //Creates element that directs to either localhost Port 3000 or the render server
 const API_BASE = window.location.hostname === 'localhost'
     ? 'http://localhost:3000'
-    : 'https://your-app.onrender.com';
+    : 'https://cdpeventstreamsim.onrender.com';
 
 let anonymousId = crypto.randomUUID();
 let userId = null;
