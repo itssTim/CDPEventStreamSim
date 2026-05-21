@@ -5,7 +5,7 @@ const app = express();
 //When request comes in with a JSON this will parse it so we can read it as a JS object
 app.use(express.json());
 //Tells Express to serve everything in public/ folder as static files
-app.use(express.static('public'));
+app.use(express.static('docs'));
 
 /* Meant to address CORS
 Allows server to accep requests from any origin
