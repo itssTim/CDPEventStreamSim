@@ -7,6 +7,19 @@ app.use(express.json());
 //Tells Express to serve everything in public/ folder as static files
 app.use(express.static('public'));
 
+/* Meant to address CORS
+Allows server to accep requests from any origin
+Allows HTTP methods listed
+Allows the Content-type our fetch is sending
+Passes the request to the actual route handler. Without it, the middleware would not execute and request would stop */
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    if (req.method === 'OPTIONS') return res.sendStatus(204);
+    next();
+});
+
 //Defines the route: When POST request comes in at /track, it will run the function. req is the incoming request, res is response we send back
 app.post('/track', (req, res) => {
   //This is the request payload
