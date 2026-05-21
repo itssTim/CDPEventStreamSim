@@ -1,4 +1,4 @@
-//Create server intance and object used to define routes, etc.
+//Create server instance and object used to define routes, etc.
 const express = require('express');
 const app = express();
 
@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.static('docs'));
 
 /* Meant to address CORS
-Allows server to accep requests from any origin
+Allows server to accept requests from any origin
 Allows HTTP methods listed
 Allows the Content-type our fetch is sending
 Passes the request to the actual route handler. Without it, the middleware would not execute and request would stop */
@@ -30,6 +30,6 @@ app.post('/track', (req, res) => {
 });
 
 //This is setting the server on port 3000. Logs a confirmation in the terminal
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server running on http://localhost:3000');
 });
