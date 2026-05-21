@@ -1,0 +1,25 @@
+{
+  "name": "cdpeventstreamsim",
+  "version": "1.0.0",
+  "description": "Simulating how a Customer Data Platform ingests behavioral events from a web surface.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itssTim/CDPEventStreamSim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/itssTim/CDPEventStreamSim/issues"
+  },
+  "homepage": "https://github.com/itssTim/CDPEventStreamSim#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
