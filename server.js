@@ -16,7 +16,7 @@ Allows the Content-type our fetch is sending
 Passes the request to the actual route handler. Without it, the middleware would not execute and request would stop */
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     if (req.method === 'OPTIONS') return res.sendStatus(204);
     next();
@@ -31,6 +31,11 @@ app.post('/track', (req, res) => {
   console.log('Event received:', JSON.stringify(event, null, 2));
   res.status(200).json({ status: 'ok', received: event });
 });
+
+//Defines route for sending the stored events
+app.get('/events', (req, res) => {
+  res.json(events);
+})
 
 //This is setting the server on port 3000. Logs a confirmation in the terminal
 app.listen(process.env.PORT || 3000, () => {
