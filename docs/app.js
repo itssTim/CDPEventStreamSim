@@ -48,7 +48,7 @@ let eventFire = async function(type) {
         context: {
             page: window.location.href,
             userAgent: navigator.userAgent,
-            screenResolution: `'${window.screen.width}x${window.screen.height}'`
+            screenResolution: `${window.screen.width}x${window.screen.height}`
         },
         properties: {}
     };
@@ -103,7 +103,7 @@ let getServerData = async function() {
     try{
     let serverResponse = await fetch(`${API_BASE}/events`)
     let data = await serverResponse.json();
-    if (!serverResponse.ok) throw new Error(`Error: ${response.status}`);
+    if (!serverResponse.ok) throw new Error(`Error: ${serverResponse.status}`);
     console.log(data);
     } catch(err) {
         console.error(err);
