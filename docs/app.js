@@ -12,6 +12,7 @@ let event_btns = document.querySelector('.btn-panel');
 let clear_btn = document.querySelector('.clear-btn');
 let log_body = document.querySelector('.log-body');
 let log_count = document.querySelector('.event-count');
+let server_btn = document.querySelector('.server-btn');
 
 const events = {
     sign_up : {email: 'user@example.com', plan: 'starter'},
@@ -111,4 +112,4 @@ let getServerData = async function() {
 
 };
 
-document.querySelector('.server-btn').addEventListener('click', getServerData)
+server_btn.addEventListener('click', getServerData);
