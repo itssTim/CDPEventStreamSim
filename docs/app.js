@@ -96,3 +96,19 @@ event_btns.addEventListener('click', function(e)
 });
 
 clear_btn.addEventListener('click', clearLog);
+
+
+let getServerData = async function() {
+    try{
+    let serverResponse = await fetch(`${API_BASE}/events`)
+    let data = await serverResponse.json();
+    if (!serverResponse.ok) throw new Error(`Error: ${response.status}`);
+    console.log(data);
+    } catch(err) {
+        console.error(err);
+        throw err;
+    };
+
+};
+
+document.querySelector('.server-btn').addEventListener('click', getServerData)

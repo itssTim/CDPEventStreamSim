@@ -4,10 +4,12 @@
   .evt-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 0.5px solid ; border-radius: 15px; background: white; cursor: pointer; font-size: 14px; transition: background 0.12s; }
   .evt-btn:hover { background: lightgray; }
   .evt-btn .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .server-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 0.5px solid ; border-radius: 15px; background: white; cursor: pointer; font-size: 14px; transition: background 0.12s; }
   .dot-signup { background: #1D9E75; }
   .dot-view { background: #378ADD; }
   .dot-cart { background: #BA7517; }
   .dot-cta { background: #D4537E; }
+  .dot-serverData { background: #a33acc; }
   .log-panel { background: #0f1117; padding: 0; overflow: hidden; border: 0.5px solid #2a2d35; display: flex; flex-direction: column; min-height: 360px; }
   .log-header { display: flex; align-items: center; gap: 8px; padding: 10px 14px; border-bottom: 0.5px solid #2a2d35; background: #171920; }
   .log-header .tl { display: flex; gap: 6px; }
