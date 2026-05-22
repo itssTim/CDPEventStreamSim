@@ -35,7 +35,7 @@ app.post('/track', (req, res) => {
 //Defines route for sending the stored events
 app.get('/events', (req, res) => {
   res.json(events);
-})
+});
 
 //This is setting the server on port 3000. Logs a confirmation in the terminal
 app.listen(process.env.PORT || 3000, () => {
