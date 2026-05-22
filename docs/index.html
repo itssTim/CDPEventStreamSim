@@ -23,24 +23,26 @@
         <i class="fa fa-trash-o" aria-hidden="true"></i> clear log
         </button>
         <br>
-        <button class="evt-btn" ><span class="dot dot-serverData"></span>Check Server Data in Console Log</button>
     </div>
-
+    
     <div class="log-panel">
         <div class="log-header">
-        <div class="tl"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
-        <span class="log-title">event-stream.log</span>
+            <div class="tl"><span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span></div>
+            <span class="log-title">event-stream.log</span>
         </div>
         <div class="log-body" id="logBody">
-        <div class="log-empty" id="emptyState">— no events captured yet —</div>
+            <div class="log-empty" id="emptyState">— no events captured yet —</div>
         </div>
         <div class="status-bar">
-        <div class="status-dot"></div>
-        <span class="status-text">listening on /collect</span>
-        <span class="event-count" id="evtCount">0 events</span>
+            <div class="status-dot"></div>
+            <span class="status-text">listening on /collect</span>
+            <span class="event-count" id="evtCount">0 events</span>
         </div>
     </div>
-    </div>
+</div>
+<div class="server-panel">
+<button class="server-btn" ><span class="dot dot-serverData"></span>Check Server Data in Console Log</button>
+</div>
 
     <script src="app.js"></script>
 </body>

@@ -4,7 +4,8 @@
   .evt-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 0.5px solid ; border-radius: 15px; background: white; cursor: pointer; font-size: 14px; transition: background 0.12s; }
   .evt-btn:hover { background: lightgray; }
   .evt-btn .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-  .server-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 0.5px solid ; border-radius: 15px; background: white; cursor: pointer; font-size: 14px; transition: background 0.12s; }
+  .server-panel h3{ font-size: 13px; font-weight: 500; margin: 0 0 4px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .server-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border: 0.5px solid ; background: white; cursor: pointer; font-size: 14px; transition: background 0.12s; }
   .dot-signup { background: #1D9E75; }
   .dot-view { background: #378ADD; }
   .dot-cart { background: #BA7517; }
