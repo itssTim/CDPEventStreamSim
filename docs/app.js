@@ -92,7 +92,9 @@ let clearLog = function () {
 event_btns.addEventListener('click', function(e) 
 {
     if (e.target.matches('.evt-btn')) {
-        eventFire(e.target.dataset.type);
+        const eventType = e.target.dataset.type;
+        eventFire(eventType);
+        analytics.track(eventType, events[eventType]);
     }
 });
 
