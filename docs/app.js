@@ -94,6 +94,9 @@ event_btns.addEventListener('click', function(e)
     if (e.target.matches('.evt-btn')) {
         const eventType = e.target.dataset.type;
         eventFire(eventType);
+        if (eventType === 'sign_up') {
+            analytics.identify(userId, {email: events.sign_up.email})
+        }
         analytics.track(eventType, events[eventType]);
     }
 });
